@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- user1/pw1 (...) user4/pw4 -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+
+  <!-- CSS and JS -->
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./script.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico">
+  <title>Fake Bank</title>
+</head>
+<body>
+
+  <div id="login-screen" class="login-screen">
+    <form>
+      <div class="account-name">
+        <input id="login-account-name-input" type="text" required minlength="4" maxlength="6" size="6">
+        <label for="login-account-name-input">User name</label>
+      </div>
+      <div class="password">
+        <input id="login-account-password-input" type="password" required>
+        <label for="login-account-password-input">Password</label>
+      </div>
+      <button id="login-button">➡</button>
+    </form>
+
+    <img src="./assets/logo.jpg" alt="" width="1120" height="1120">
+    <footer class="footer">
+      <p>© Copyright 476CE Fake Bank LLC.</p>
+    </footer>
+  </div>
+  
+  <header>
+    <h2>Welcome, <span id="welcome-name">User Name</span></h2>
+    <img src="./assets/icon.png" alt="" width="192" height="192">
+    <a href="/">Log out</a>
+  </header>
+
+  <main>
+    <section class="top-heading">
+      <div class="current-balance-container">
+        <h2 class="current-balance-label">Current balance</h2>
+        <p class="current-date">As of <span id="top-heading-datetime">Year Month Day, hour:minute</span></p>
+      </div>
+      <h2 id ="account-balance" class="current-balance">00 000,00E</h2>
+    </section>
+
+    <section id="transactions" class="transactions">
+      <article>
+        <div class="transaction-type-container">
+          <div class="transaction-type-pill gradient-green">0 Withdrawal</div>
+          <div class="transaction-date">2222-11-22</div>
+        </div>
+        <p>00 000,00E</p>
+      </article>
+    </section>
+    
+    
+    <section class="operations">
+      <article class="transfer-funds">
+        <h3>Transfer funds</h3>
+          <form>
+            <div class="destination">
+              <input id="transfer-funds-destination-input" type="text" required minlength="4" maxlength="6" size="6">
+              <label for="transfer-funds-destination-input">Transfer to</label>
+            </div>
+            <div class="amount">
+              <input id="transfer-funds-amount-input" type="text" inputmode="numeric" pattern="^\d+(\.\d{1,2})?$">
+              <label for="transfer-funds-amount-input">Amount</label>
+            </div>
+            <button id="transfer-funds-button">➡</button>
+          </form>
+      </article>
+
+      <article class="request-loan">
+        <h3>Request loan</h3>
+          <form>
+              <div class="amount">
+              <input id="reuqest-loan-amount-input" type="text" inputmode="numeric" pattern="^\d+(\.\d{1,2})?$">
+              <label for="reuqest-loan-amount-input">Amount</label>
+            </div>
+            <button id="reuqest-loan-button">➡</button>
+          </form>
+      </article>
+
+      <article class="close-account">
+        <h3>Close account</h3>
+          <form>
+            <div class="account-name">
+              <input id="close-account-name-input" type="text" required minlength="4" maxlength="6" size="6">
+              <label for="close-account-name-input">Confirm user name</label>
+            </div>
+            <div class="password">
+              <input id="close-account-password-input" type="password" required>
+              <label for="close-account-password-input">Confirm password</label>
+            </div>
+            <button>➡</button>
+          </form>
+      </article>
+    </section>
+
+    <section class="bottom-summary">
+      <h4>In <span id="total-income">00 000,00E</span></h4>
+      <h4>Out <span id="total-expenditure">00 000,00E</span></h4>
+      <h4>Interest <span id="total-interest">00 000,00E</span></h4>
+      <button id="button-sort-transfer-history">⬇⬆ Sort</button>
+      <p>You will be logged out in <span id="logout-timer">00:00</span></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© Copyright 476CE Fake Bank LLC.</p>
+  </footer>
+
+</body>
+</html>
